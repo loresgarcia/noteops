@@ -12,6 +12,24 @@
     font-size: 14px;
     color: #1E1E1E;
     height: 80%;
+    overflow: auto;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1E1E1E25;
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1E1E1E;
 }
 
 .card textarea {
