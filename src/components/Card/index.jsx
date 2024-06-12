@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import  { useState } from 'react';
-import { Palette, Edit, Delete } from '@mui/icons-material';
+import { Palette, Edit, Delete, CheckCircleOutline } from '@mui/icons-material';
 import './Card.css';
 import CardColor from './CardColor';
 
@@ -40,7 +40,10 @@ const Card = ({ id, message, handleDelete }) => {
             )}
             <div className="icons">
                 <Palette className="icon" onClick={() => setColorSelectVisible(!colorSelectVisible)} />
-                <Edit className="icon" onClick={handleEdit} />
+                {isEditing ?
+                    <CheckCircleOutline className="icon" onClick={() => setIsEditing(false)} /> :
+                    <Edit className="icon" onClick={handleEdit} />
+                }
                 <Delete className="icon" onClick={() => handleDelete(id)} />
             </div>
             {colorSelectVisible ?
