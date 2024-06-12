@@ -5,10 +5,10 @@ const Main = () => {
     const [cards, setCards] = useState(
         [
             {
-                id: "1",
+                id: 1,
                 message: "card 1"
             }, {
-                id: "2",
+                id: 2,
                 message: "card 2"
             }
         ]
@@ -28,6 +28,8 @@ const Main = () => {
                         id={c.id} 
                         message={c.message} 
                         handleDelete={handleDelete} 
+                        cards={cards}
+                        setCards={setCards}
                     />
                 )
                 : <></>

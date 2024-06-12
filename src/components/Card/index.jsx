@@ -4,8 +4,8 @@ import { Palette, Edit, Delete, CheckCircleOutline } from '@mui/icons-material';
 import './Card.css';
 import CardColor from './CardColor';
 
-const Card = ({ id, message, handleDelete }) => {
-    const [text, setText] = useState("Oi, essa é a minha primeira nota!");
+const Card = ({ id, message, handleDelete, cards, setCards }) => {
+    const [text, setText] = useState(message);
     const [isEditing, setIsEditing] = useState(false);
     const [cardColor, setCardColor] = useState("#9FB4C7");
     const [colorSelectVisible, setColorSelectVisible] = useState(false);
@@ -18,9 +18,17 @@ const Card = ({ id, message, handleDelete }) => {
         setText(e.target.value);
     };
 
-    const handleBlur = () => {
-        setIsEditing(false);
-    };
+    const handleDone = () => {
+        setIsEditing(false)
+        if (text === "") {
+            handleDelete(id);
+        } else {
+            const newArray = cards.map(c => {
+                return c.id === id ? {...c, message: text} : c;
+            })
+            setCards(newArray);
+        }
+    }
 
     const handleSelectColor = (color) => {
         setCardColor(color)
@@ -32,7 +40,6 @@ const Card = ({ id, message, handleDelete }) => {
                 <textarea
                     value={text}
                     onChange={handleChange}
-                    onBlur={handleBlur}
                     autoFocus
                 />
             ) : (
@@ -41,7 +48,7 @@ const Card = ({ id, message, handleDelete }) => {
             <div className="icons">
                 <Palette className="icon" onClick={() => setColorSelectVisible(!colorSelectVisible)} />
                 {isEditing ?
-                    <CheckCircleOutline className="icon" onClick={() => setIsEditing(false)} /> :
+                    <CheckCircleOutline className="icon" onClick={handleDone} /> :
                     <Edit className="icon" onClick={handleEdit} />
                 }
                 <Delete className="icon" onClick={() => handleDelete(id)} />
