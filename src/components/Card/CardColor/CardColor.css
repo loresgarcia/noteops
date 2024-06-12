@@ -1,0 +1,42 @@
+
+.card__color {
+    height: 24px;
+    width: 100%;
+    background-color: #F2F2F2;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.card__color div {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 1px 1px 1px #1E1E1E40;
+}
+
+.card__color .default {
+    background-color: #9FB4C7;
+}
+
+.card__color .green {
+    background-color: #A0ECD0;
+}
+
+.card__color .salmon {
+    background-color: #F4B9B2;
+}
+
+.card__color .red {
+    background-color: #F49690;
+}
+
+.card__color .yellow {
+    background-color: #FFF799;
+}
+
+.card__color .purple {
+    background-color: #C490D1;
+}
