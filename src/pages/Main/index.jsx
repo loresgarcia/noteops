@@ -1,57 +1,72 @@
-import { useState } from "react"
-import Card from "../../components/Card"
+import { useState} from "react";
+import Card from "../../components/Card";
+import "./Main.css";
+import InputBar from "../../components/InputBar";
+import search from '../../assets/search.png';
+import add from '../../assets/add.png';
 
-import "./Main.css"
 
 const Main = () => {
-    const [cards, setCards] = useState(
-        [
-            {
-                id: 1,
-                message: "card 1"
-            }, {
-                id: 2,
-                message: "card 2"
-            }, {
-                id: 3,
-                message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
-            }, {
-                id: 4,
-                message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-            }, {
-                id: 5,
-                message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
-            }, {
-                id: 6,
-                message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            }
-        ]
-    );
+    const [cards, setCards] = useState([]);
 
     const handleDelete = (id) => {
         const newArray = cards.filter(c => c.id !== id);
-        setCards(newArray)
+        setCards(newArray);
     };
+
+    const handleAddCard = (message) => {
+        const newCard = {
+            id: cards.length > 0 ? cards[cards.length - 1].id + 1 : 1,
+            message
+        };
+        setCards([...cards, newCard]);
+    };
+
+    const [searchText, setSearchText] = useState('');
+
+    const handleSearch = (text) => {
+        setSearchText(text);
+    };
+
+    const filteredCards = cards.filter(card =>
+        card.message.toLowerCase().includes(searchText.toLowerCase())
+    );
 
     return (
         <>
-            <section className="cards">
-                {cards.length > 0 
-                    ? cards.map(c => 
-                        <Card 
-                            key={c.id} 
-                            id={c.id} 
-                            message={c.message} 
-                            handleDelete={handleDelete} 
-                            cards={cards}
-                            setCards={setCards}
-                        />
-                    )
-                    : <></>
-                }
-            </section>
+            <div>
+                <InputBar
+                    placeholder='Pesquisar'
+                    icon={search}
+                    backgroundColor='#2F2F37'
+                    onSearch={handleSearch}
+                />
+            </div>
+            <div>
+                <InputBar
+                    placeholder='Adicionar uma nota'
+                    icon={add}
+                    backgroundColor='#1C1C23'
+                    onAddCard={handleAddCard}
+                />
+                <section className="cards">
+                    {filteredCards.length > 0
+                        ? filteredCards.map(c =>
+                            <Card
+                                key={c.id}
+                                id={c.id}
+                                message={c.message}
+                                handleDelete={handleDelete}
+                                cards={cards}
+                                setCards={setCards}
+                            />
+                        )
+                        : <></>
+                    }
+                </section>
+            </div>
         </>
-    )
+    );
 }
 
 export default Main;

@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import  { useState } from 'react';
+import { useState } from 'react';
 import { Palette, Edit, Delete, CheckCircleOutline } from '@mui/icons-material';
 import './Card.css';
 import CardColor from './CardColor';
@@ -19,23 +19,23 @@ const Card = ({ id, message, handleDelete, cards, setCards }) => {
     };
 
     const handleDone = () => {
-        setIsEditing(false)
+        setIsEditing(false);
         if (text === "") {
             handleDelete(id);
         } else {
             const newArray = cards.map(c => {
-                return c.id === id ? {...c, message: text} : c;
-            })
+                return c.id === id ? { ...c, message: text } : c;
+            });
             setCards(newArray);
         }
-    }
+    };
 
     const handleSelectColor = (color) => {
-        setCardColor(color)
-    }
+        setCardColor(color);
+    };
 
     return (
-        <div className="card" style={{backgroundColor: cardColor}}>
+        <div className="card" style={{ backgroundColor: cardColor }}>
             {isEditing ? (
                 <textarea
                     value={text}
@@ -55,7 +55,7 @@ const Card = ({ id, message, handleDelete, cards, setCards }) => {
             </div>
             {colorSelectVisible ?
                 <CardColor handleSelectColor={handleSelectColor} />
-            : <></>}
+                : <></>}
         </div>
     );
 };
