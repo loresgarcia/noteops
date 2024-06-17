@@ -7,7 +7,13 @@ import add from '../../assets/add.png';
 
 
 const Main = () => {
-    const [cards, setCards] = useState([]);
+    const [cards, setCards] = useState([{
+        id: 1,
+        message: "card 1"
+    }, {
+        id: 2,
+        message: "card 2"
+    }]);
 
     const handleDelete = (id) => {
         const newArray = cards.filter(c => c.id !== id);
