@@ -28,7 +28,8 @@ export default function InputBar({ placeholder, icon, backgroundColor, onSearch,
         value={text}
         onChange={handleChange}
       />
-      <button className="input-button" onClick={onAddCard ? handleClick : null}> <img src={icon} alt="icon" />
+      <button className="input-button" onClick={handleClick}>
+        <img src={icon} alt="icon" />
       </button>
     </div>
   );

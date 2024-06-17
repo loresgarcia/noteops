@@ -1,19 +1,17 @@
-import { useState} from "react";
-import Card from "../../components/Card";
-import "./Main.css";
-import InputBar from "../../components/InputBar";
-import add from '../../assets/add.png';
+import { useState } from "react";
 import Header from "../../components/Header";
-
+import InputBar from "../../components/InputBar";
+import CardList from "../../components/CardList";
+import add from '../../assets/add.png';
+// import "./Main.css";
 
 const Main = () => {
-    const [cards, setCards] = useState([{
-        id: 1,
-        message: "card 1"
-    }, {
-        id: 2,
-        message: "card 2"
-    }]);
+    const [cards, setCards] = useState([
+        { id: 1, message: "card 1" },
+        { id: 2, message: "card 2" }
+    ]);
+
+    const [searchText, setSearchText] = useState('');
 
     const handleDelete = (id) => {
         const newArray = cards.filter(c => c.id !== id);
@@ -28,17 +26,13 @@ const Main = () => {
         setCards([...cards, newCard]);
     };
 
-    const [searchText, setSearchText] = useState('');
-
     const filteredCards = cards.filter(card =>
         card.message.toLowerCase().includes(searchText.toLowerCase())
     );
-    
-    
 
     return (
         <>
-        <Header/>
+            <Header onSearch={setSearchText} />
             <div>
                 <InputBar
                     placeholder='Adicionar uma nota'
@@ -46,21 +40,10 @@ const Main = () => {
                     backgroundColor='#1C1C23'
                     onAddCard={handleAddCard}
                 />
-                <section className="cards">
-                    {filteredCards.length > 0
-                        ? filteredCards.map(c =>
-                            <Card
-                                key={c.id}
-                                id={c.id}
-                                message={c.message}
-                                handleDelete={handleDelete}
-                                cards={cards}
-                                setCards={setCards}
-                            />
-                        )
-                        : <></>
-                    }
-                </section>
+                <CardList
+                    cards={filteredCards}
+                    handleDelete={handleDelete}
+                />
             </div>
         </>
     );
