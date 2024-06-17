@@ -41,8 +41,10 @@ const Main = () => {
                     onAddCard={handleAddCard}
                 />
                 <CardList
-                    cards={filteredCards}
+                    cards={cards}
+                    filteredCards={filteredCards}
                     handleDelete={handleDelete}
+                    setCards={setCards}
                 />
             </div>
         </>
