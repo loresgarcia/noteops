@@ -7,8 +7,8 @@ import "./Main.css";
 
 const Main = () => {
     const [cards, setCards] = useState([
-        { id: 1, message: "card 1" },
-        { id: 2, message: "card 2" }
+        { id: 1, message: "card 1", color: "#9FB4C7" },
+        { id: 2, message: "card 2", color: "#9FB4C7" }
     ]);
 
     const [searchText, setSearchText] = useState('');
@@ -33,7 +33,7 @@ const Main = () => {
 
     const toggleDarkMode = () => {
         setIsDarkMode(prevMode => !prevMode);
-      };
+    };
 
     return (
         <>

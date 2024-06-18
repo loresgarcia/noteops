@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Card from "../Card";
 import './CardList.css';
 
@@ -12,6 +13,7 @@ const CardList = ({ cards, filteredCards, handleDelete, setCards }) => {
               message={c.message}
               handleDelete={handleDelete}
               cards={cards}
+              color={c.color}
               setCards={setCards}
             />
           ))
