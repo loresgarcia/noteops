@@ -5,20 +5,22 @@ import './Switch.css';
 export default function Switch({ isDarkMode, toggleDarkMode }){
 
     return(
+      <div style={{width: "180px"}}>
         <button
-      className='switch'
-      onClick={toggleDarkMode}
-      style={{
-        backgroundColor: isDarkMode ? '#2F2F37' : '#EEEEFF',
-        color: isDarkMode ? '#FFF' : '#333'
-      }}
-    >
-      {isDarkMode ? (
-        <LightModeIcon className='switch-icon' />
-      ) : (
-        <DarkModeIcon className='switch-icon' />
-      )}
-    </button>
+          className='switch'
+          onClick={toggleDarkMode}
+          style={{
+            backgroundColor: isDarkMode ? '#2F2F37' : '#EEEEFF',
+            color: isDarkMode ? '#FFF' : '#333'
+          }}
+        >
+          {isDarkMode ? (
+            <LightModeIcon className='switch-icon' />
+          ) : (
+            <DarkModeIcon className='switch-icon' />
+          )}
+        </button>
+      </div>
 
     );
 }
