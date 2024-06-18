@@ -3,6 +3,7 @@ import logo from '../../assets/logo.png';
 import Logo from '../Logo';
 import InputBar from "../InputBar";
 import search from '../../assets/search.png';
+import Switch from '../Switch';
 
 export default function Header({ onSearch }) {
   return (
@@ -20,6 +21,7 @@ export default function Header({ onSearch }) {
         backgroundColor='#2F2F37'
         onSearch={onSearch}
       />
+      <Switch/>
     </header>
   );
 }
