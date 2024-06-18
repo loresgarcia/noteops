@@ -3,7 +3,7 @@ import "./CardColor.css";
 
 const CardColor = ({ handleColorChange }) => {
     return (
-        <div className='card__color'>
+        <div className='card__color' >
             <div className='default' onClick={() => handleColorChange("#9FB4C7")}></div>
             <div className='green' onClick={() => handleColorChange("#A0ECD0")}></div>
             <div className='salmon' onClick={() => handleColorChange("#F4B9B2")}></div>

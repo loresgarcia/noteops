@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from 'react';
 import { Palette, Edit, Delete, CheckCircleOutline } from '@mui/icons-material';
-import './Card.css';
 import CardColor from './CardColor';
+import './Card.css';
 
 const Card = ({ id, message, color, handleDelete, cards, setCards }) => {
     const [text, setText] = useState(message);
@@ -38,7 +38,7 @@ const Card = ({ id, message, color, handleDelete, cards, setCards }) => {
         const newArray = cards.map(c => {
             return c.id === id ? { ...c, color: cardColor } : c;
         });
-        console.log(newArray)
+        setColorSelectVisible(false);
         setCards(newArray);
     }, [cardColor]); // eslint-disable-line
 
