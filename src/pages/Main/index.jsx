@@ -49,7 +49,8 @@ const Main = () => {
             
                 <InputBar
                     placeholder='Adicionar uma nota'
-                    icon={add}                    
+                    icon={add}
+                    textColor={isDarkMode ? '#F2F2F2' : '#1C1C23' }
                     backgroundColor={isDarkMode ? '#1C1C23' : '#9FB4C7'}
                     onAddCard={handleAddCard}
                 />

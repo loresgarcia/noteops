@@ -11,9 +11,9 @@ const CardList = ({ cards, filteredCards, handleDelete, setCards }) => {
               key={c.id}
               id={c.id}
               message={c.message}
+              color={c.color}
               handleDelete={handleDelete}
               cards={cards}
-              color={c.color}
               setCards={setCards}
             />
           ))

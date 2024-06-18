@@ -20,6 +20,7 @@ export default function Header({ onSearch, isDarkMode, toggleDarkMode }) {
         placeholder='Pesquisar'
         icon={search}
         backgroundColor={isDarkMode ? '#2F2F37' : '#EEEEFF'}
+        textColor={isDarkMode ? '#F2F2F2' : '#1C1C23' }
         onSearch={onSearch}
       />
       <Switch

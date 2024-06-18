@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './InputBar.css';
 
-export default function InputBar({ placeholder, icon, backgroundColor, onSearch, onAddCard }) {
+export default function InputBar({ placeholder, icon, textColor, backgroundColor, onSearch, onAddCard }) {
   const [text, setText] = useState('');
 
   const handleChange = (event) => {
@@ -24,7 +24,7 @@ export default function InputBar({ placeholder, icon, backgroundColor, onSearch,
         type='text'
         placeholder={placeholder}
         className="input-field"
-        style={{ backgroundColor: backgroundColor }}
+        style={{ backgroundColor: backgroundColor, color: textColor }}
         value={text}
         onChange={handleChange}
       />
