@@ -3,7 +3,7 @@ import Header from "../../components/Header";
 import InputBar from "../../components/InputBar";
 import CardList from "../../components/CardList";
 import add from '../../assets/add.png';
-// import "./Main.css";
+import "./Main.css";
 
 const Main = () => {
     const [cards, setCards] = useState([
@@ -33,7 +33,7 @@ const Main = () => {
     return (
         <>
             <Header onSearch={setSearchText} />
-            <div>
+            <div className="main">
                 <InputBar
                     placeholder='Adicionar uma nota'
                     icon={add}
