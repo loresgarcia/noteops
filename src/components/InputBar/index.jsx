@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Search, AddCircleOutline } from '@mui/icons-material';
 import './InputBar.css';
 
 export default function InputBar({ placeholder, icon, textColor, backgroundColor, onSearch, onAddCard }) {
@@ -29,7 +30,10 @@ export default function InputBar({ placeholder, icon, textColor, backgroundColor
         onChange={handleChange}
       />
       <button className="input-button" onClick={handleClick}>
-        <img src={icon} alt="icon" />
+        {icon === "search" 
+          ? <Search className='input-icon' style={{ color: textColor }} />
+          : <AddCircleOutline className='input-icon' style={{ color: textColor }} />
+        }
       </button>
     </div>
   );

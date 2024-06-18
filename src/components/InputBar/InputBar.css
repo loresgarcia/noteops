@@ -38,7 +38,6 @@
     transform: translateY(-50%) scale(1.1); 
 }
 
-.input-button img {
-    width: 20px;
-    height: 20px;
+.input-icon {
+    font-size: 20px;
 }

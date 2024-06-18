@@ -2,7 +2,6 @@ import { useState } from "react";
 import Header from "../../components/Header";
 import InputBar from "../../components/InputBar";
 import CardList from "../../components/CardList";
-import add from '../../assets/add.png';
 import "./Main.css";
 
 const Main = () => {
@@ -49,7 +48,7 @@ const Main = () => {
             
                 <InputBar
                     placeholder='Adicionar uma nota'
-                    icon={add}
+                    icon={"add"}
                     textColor={isDarkMode ? '#F2F2F2' : '#1C1C23' }
                     backgroundColor={isDarkMode ? '#1C1C23' : '#9FB4C7'}
                     onAddCard={handleAddCard}
