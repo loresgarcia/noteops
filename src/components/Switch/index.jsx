@@ -5,7 +5,7 @@ import './Switch.css';
 export default function Switch({ isDarkMode, toggleDarkMode }){
 
     return(
-      <div style={{width: "180px"}}>
+      <div className='switch-container'>
         <button
           className='switch'
           onClick={toggleDarkMode}
