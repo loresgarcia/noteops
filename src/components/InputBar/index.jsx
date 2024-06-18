@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import { useState } from 'react';
 import { Search, AddCircleOutline } from '@mui/icons-material';
 import './InputBar.css';
 
-export default function InputBar({ placeholder, icon, textColor, backgroundColor, onSearch, onAddCard }) {
+const InputBar = ({ placeholder, icon, textColor, backgroundColor, onSearch, onAddCard }) => {
   const [text, setText] = useState('');
 
   const handleChange = (event) => {
@@ -38,3 +39,5 @@ export default function InputBar({ placeholder, icon, textColor, backgroundColor
     </div>
   );
 }
+
+export default InputBar;

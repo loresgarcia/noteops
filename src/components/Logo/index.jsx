@@ -1,4 +1,6 @@
-export default function Logo({src, width, height}){
+/* eslint-disable react/prop-types */
+
+const Logo = ({src, width, height}) => {
     return(
         <img 
             src={src} 
@@ -7,3 +9,5 @@ export default function Logo({src, width, height}){
         />
     )
 }
+
+export default Logo;
