@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import './Header.css';
 import logoLight from '../../assets/logo-light.png';
 import logoDark from '../../assets/logo-dark.png';
@@ -5,7 +6,7 @@ import Logo from '../Logo';
 import InputBar from "../InputBar";
 import Switch from '../Switch';
 
-export default function Header({ onSearch, isDarkMode, toggleDarkMode }) {
+const Header =({ onSearch, isDarkMode, toggleDarkMode }) => {
   return (
     <header
       className='header'
@@ -28,3 +29,5 @@ export default function Header({ onSearch, isDarkMode, toggleDarkMode }) {
     </header>
   );
 }
+
+export default Header;

@@ -1,9 +1,9 @@
+/* eslint-disable react/prop-types */
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import './Switch.css';
 
-export default function Switch({ isDarkMode, toggleDarkMode }){
-
+const Switch = ({ isDarkMode, toggleDarkMode }) => {
     return(
       <div className='switch-container'>
         <button
@@ -21,6 +21,7 @@ export default function Switch({ isDarkMode, toggleDarkMode }){
           )}
         </button>
       </div>
-
     );
 }
+
+export default Switch;

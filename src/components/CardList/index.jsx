@@ -17,7 +17,7 @@ const CardList = ({ cards, filteredCards, handleDelete, setCards, isDarkMode }) 
               setCards={setCards}
             />
           ))
-        : <p style={{ color: isDarkMode ? "#F2F2F2" : "#222222"}}>Nenhum card encontrado.</p>
+        : <p style={{ color: isDarkMode ? "#F2F2F2" : "#222222"}}>Não há nenhum card!</p>
       }
     </section>
   );
