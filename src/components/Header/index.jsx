@@ -12,7 +12,7 @@ export default function Header({ onSearch }) {
     >
       <Logo
         src={logo}
-        width="200px"
+        width="180px"
       />
       <InputBar
         placeholder='Pesquisar'

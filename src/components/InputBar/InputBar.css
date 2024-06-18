@@ -30,7 +30,7 @@
     justify-content: center;
 }
 
-.input-button:focus {
+.input-button:focus,.input-field:focus {
     outline: none;
 }
 
