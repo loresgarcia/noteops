@@ -4,20 +4,25 @@ O NoteOps é um site onde você pode adicionar suas notas, listas de tarefas e l
 
 ![Imagem da tela de login da aplicação](noteops.png)
 
-![Imagem da tela de login da aplicação](lightmode.png)
+![Imagem da tela principal em light mode](lightmode.png)
 
-![Imagem da tela de login da aplicação](darkmode.png)
+![Imagem da tela principal em dark mode](darkmode.png)
+
+![Imagem da tela de página não encontrada](notfound.png)
+
 
 ## 🔨 Funcionalidades do projeto
 
 Neste estágio inicial de desenvolvimento, o NoteOps possui as seguintes funcionalidades:
 
 - Tela de Login;
+- Tela de Página não encontrada;
 - Formulário para criar uma nova nota;
 - Opções de cores para as notas;
 - Editar nota;
 - Deletar nota;
-- Buscar nota.
+- Buscar nota;
+- Darkmode.
 
 ## ✔️ Técnicas e tecnologias utilizadas
 
@@ -26,7 +31,8 @@ O projeto NoteOps utiliza as seguintes tecnologias e bibliotecas:
 - `React` - Framework JavaScript;
 - `Vite` - Build tool para desenvolvimento rápido;
 - `React Router` - Biblioteca de roteamento para navegação em aplicações React;
-- `MaterialUI` - Biblioteca de ícones.
+- `MaterialUI` - Biblioteca de ícones;
+- `UUID` - Biblioteca de geração de id.
 
 ## 🛠️ Abrir e rodar o projeto
 
