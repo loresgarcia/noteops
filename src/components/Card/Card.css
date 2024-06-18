@@ -1,17 +1,17 @@
 .card {
     border-radius: 8px;
-    padding: 20px;
-    width: 200px;
-    position: relative;
     height: 200px;
     margin: 10px;
+    padding: 20px;
+    position: relative;
+    width: 200px;
 }
 
 .card p {
-    margin: 0;
-    font-size: 14px;
     color: #1E1E1E;
+    font-size: 14px;
     height: 80%;
+    margin: 0;
     overflow: auto;
 }
 
@@ -33,12 +33,12 @@
 }
 
 .card textarea {
-    width: 100%;
-    height: 75%;
-    border: none;
-    resize: none;
-    color: #1E1E1E;
     background-color: transparent;
+    border: none;
+    color: #1E1E1E;
+    height: 75%;
+    resize: none;
+    width: 100%;
 }
 
 .card textarea:focus {
@@ -52,8 +52,7 @@
 }
 
 .icon {
+    color: #1E1E1E;
     cursor: pointer;
     font-size: 18px;
-    color: #1E1E1E;
 }
-
