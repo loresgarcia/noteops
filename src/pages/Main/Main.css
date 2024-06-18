@@ -1,8 +1,9 @@
 .main{
     width: 100vw;
-    height: auto;
+    height: calc(100vh - 78px);
     display:flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 3rem;
+    padding-top: 3rem;
+    box-sizing: border-box;
 }
