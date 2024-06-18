@@ -7,7 +7,7 @@ import CardColor from './CardColor';
 const Card = ({ id, message, color, handleDelete, cards, setCards }) => {
     const [text, setText] = useState(message);
     const [isEditing, setIsEditing] = useState(false);
-    const [cardColor, setCardColor] = useState("#9FB4C7");
+    const [cardColor, setCardColor] = useState(color);
     const [colorSelectVisible, setColorSelectVisible] = useState(false);
 
     const handleEdit = () => {
@@ -38,6 +38,7 @@ const Card = ({ id, message, color, handleDelete, cards, setCards }) => {
         const newArray = cards.map(c => {
             return c.id === id ? { ...c, color: cardColor } : c;
         });
+        console.log(newArray)
         setCards(newArray);
     }, [cardColor]); // eslint-disable-line
 

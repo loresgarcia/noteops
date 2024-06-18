@@ -2,7 +2,7 @@
 import Card from "../Card";
 import './CardList.css';
 
-const CardList = ({ cards, filteredCards, handleDelete, setCards }) => {
+const CardList = ({ cards, filteredCards, handleDelete, setCards, isDarkMode }) => {
   return (
     <section className="cards">
       {filteredCards.length > 0
@@ -17,7 +17,7 @@ const CardList = ({ cards, filteredCards, handleDelete, setCards }) => {
               setCards={setCards}
             />
           ))
-        : <p>Nenhum card encontrado.</p>
+        : <p style={{ color: isDarkMode ? "#F2F2F2" : "#222222"}}>Nenhum card encontrado.</p>
       }
     </section>
   );

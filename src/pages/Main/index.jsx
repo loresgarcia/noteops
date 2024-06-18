@@ -1,14 +1,12 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 import Header from "../../components/Header";
 import InputBar from "../../components/InputBar";
 import CardList from "../../components/CardList";
 import "./Main.css";
 
 const Main = () => {
-    const [cards, setCards] = useState([
-        { id: 1, message: "card 1", color: "#9FB4C7" },
-        { id: 2, message: "card 2", color: "#9FB4C7" }
-    ]);
+    const [cards, setCards] = useState([]);
 
     const [searchText, setSearchText] = useState('');
     const [isDarkMode, setIsDarkMode] = useState(false);
@@ -20,8 +18,9 @@ const Main = () => {
 
     const handleAddCard = (message) => {
         const newCard = {
-            id: cards.length > 0 ? cards[cards.length - 1].id + 1 : 1,
-            message
+            id: uuidv4(),
+            message,
+            color: "#9FB4C7"
         };
         setCards([...cards, newCard]);
     };
@@ -58,6 +57,7 @@ const Main = () => {
                     filteredCards={filteredCards}
                     handleDelete={handleDelete}
                     setCards={setCards}
+                    isDarkMode={isDarkMode}
                 />
             </div>
         </>
