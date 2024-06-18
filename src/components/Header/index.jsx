@@ -1,27 +1,30 @@
 import './Header.css';
-import logo from '../../assets/logo.png';
+import logoLight from '../../assets/logo-light.png';
+import logoDark from '../../assets/logo-dark.png';
 import Logo from '../Logo';
 import InputBar from "../InputBar";
 import search from '../../assets/search.png';
 import Switch from '../Switch';
 
-export default function Header({ onSearch }) {
+export default function Header({ onSearch, isDarkMode, toggleDarkMode }) {
   return (
     <header
       className='header'
-      style={{backgroundColor:"#9FB4C7"}}
+      style={{ backgroundColor: isDarkMode ? '#1C1C21' : '#9FB4C7' }}
     >
       <Logo
-        src={logo}
+        src={isDarkMode ? logoDark : logoLight}
         width="180px"
       />
       <InputBar
         placeholder='Pesquisar'
         icon={search}
-        backgroundColor='#2F2F37'
+        backgroundColor={isDarkMode ? '#2F2F37' : '#EEEEFF'}
         onSearch={onSearch}
       />
-      <Switch/>
+      <Switch
+      isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}
+      />
     </header>
   );
 }

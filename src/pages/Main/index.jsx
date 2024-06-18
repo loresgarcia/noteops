@@ -12,6 +12,7 @@ const Main = () => {
     ]);
 
     const [searchText, setSearchText] = useState('');
+    const [isDarkMode, setIsDarkMode] = useState(false);
 
     const handleDelete = (id) => {
         const newArray = cards.filter(c => c.id !== id);
@@ -30,14 +31,26 @@ const Main = () => {
         card.message.toLowerCase().includes(searchText.toLowerCase())
     );
 
+    const toggleDarkMode = () => {
+        setIsDarkMode(prevMode => !prevMode);
+      };
+
     return (
         <>
-            <Header onSearch={setSearchText} />
-            <div className="main">
+            <Header 
+                onSearch={setSearchText}
+                toggleDarkMode = {toggleDarkMode} 
+                isDarkMode={isDarkMode} 
+            />
+            <div
+                className="main"
+                style={{ backgroundColor: isDarkMode ? '#2F2F37' : '#EEEEFF'}}
+            >    
+            
                 <InputBar
                     placeholder='Adicionar uma nota'
-                    icon={add}
-                    backgroundColor='#1C1C23'
+                    icon={add}                    
+                    backgroundColor={isDarkMode ? '#1C1C23' : '#9FB4C7'}
                     onAddCard={handleAddCard}
                 />
                 <CardList
