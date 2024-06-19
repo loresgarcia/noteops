@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { useState, useEffect } from 'react';
 import './Header.css';
 import logoLight from '../../assets/logo-light.png';
 import logoDark from '../../assets/logo-dark.png';
@@ -7,6 +8,21 @@ import InputBar from "../InputBar";
 import Switch from '../Switch';
 
 const Header =({ onSearch, isDarkMode, toggleDarkMode }) => {
+
+  const [width, setWidth] = useState(window.innerWidth < 600 ? '6rem' : '10rem');
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth < 600 ? '6rem' : '10rem');
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <header
       className='header'
@@ -14,7 +30,7 @@ const Header =({ onSearch, isDarkMode, toggleDarkMode }) => {
     >
       <Logo
         src={isDarkMode ? logoDark : logoLight}
-        width="180px"
+        width={width}
       />
       <InputBar
         placeholder='Pesquisar'

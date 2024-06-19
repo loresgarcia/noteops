@@ -1,7 +1,17 @@
 .header{
-    align-items: center;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 4rem;
     display:flex;
-    height: 78px;
-    justify-content: space-between;
-    padding:0 5rem; 
+    align-items: center;
+    justify-content: space-around;
+    gap:2rem;
+    padding:3rem;
+}
+
+@media (max-width: 600px) {
+    .header{
+        gap:1rem;
+        padding:3rem 1rem;
+    }
 }

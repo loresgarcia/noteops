@@ -1,19 +1,19 @@
 .card__color {
     align-items: center;
     background-color: #F2F2F2;
-    border-radius: 4px;
+    border-radius: 0.5rem;
     display: flex;
-    height: 24px;
+    height: 1.5rem;
     justify-content: space-around;
     width: 100%;
 }
 
 .card__color div {
-    border-radius: 4px;
-    box-shadow: 1px 1px 1px #1E1E1E40;
+    border-radius: 0.5rem;
+    box-shadow: 0.0625rem #1E1E1E40;
     cursor: pointer;
-    height: 16px;
-    width: 16px;
+    height: 1rem;
+    width: 1rem;
 }
 
 .card__color .default {

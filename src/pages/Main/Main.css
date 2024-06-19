@@ -6,4 +6,5 @@
     min-height: calc(100vh - 78px);
     padding-top: 3rem;
     width: 100vw;
+    box-sizing: border-box;
 }
