@@ -6,19 +6,29 @@ import CardList from "../../components/CardList";
 import "./Main.css";
 
 const Main = () => {
+    // Inicializar o estado `cards` com dados do LocalStorage se disponíveis
     const [cards, setCards] = useState(() => {
-        // Inicializa o estado `cards` com dados do LocalStorage se disponíveis
         const savedCards = localStorage.getItem('cards');
         return savedCards ? JSON.parse(savedCards) : [];
     });
 
+    // Inicializar o estado `isDarkMode` com dados do LocalStorage se disponíveis
+    const [isDarkMode, setIsDarkMode] = useState(() => {
+        const savedTheme = localStorage.getItem('isDarkMode');
+        return savedTheme ? JSON.parse(savedTheme) : false;
+    });
+
     const [searchText, setSearchText] = useState('');
-    const [isDarkMode, setIsDarkMode] = useState(false);
 
     useEffect(() => {
         // Salvar cards no LocalStorage sempre que eles forem atualizados
         localStorage.setItem('cards', JSON.stringify(cards));
     }, [cards]);
+
+    useEffect(() => {
+        // Salvar o tema no LocalStorage sempre que ele for atualizado
+        localStorage.setItem('isDarkMode', JSON.stringify(isDarkMode));
+    }, [isDarkMode]);
 
     const handleDelete = (id) => {
         const newArray = cards.filter(c => c.id !== id);
