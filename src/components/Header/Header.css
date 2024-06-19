@@ -1,12 +1,12 @@
 .header{
-    box-sizing: border-box;
-    width: 100vw;
-    height: 4rem;
-    display:flex;
     align-items: center;
-    justify-content: space-around;
+    box-sizing: border-box;
+    display:flex;
     gap:2rem;
+    height: 4rem;
+    justify-content: space-around;
     padding:3rem;
+    width: 100vw; 
 }
 
 @media (max-width: 600px) {
