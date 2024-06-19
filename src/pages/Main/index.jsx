@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import Header from "../../components/Header";
 import InputBar from "../../components/InputBar";
@@ -6,10 +6,19 @@ import CardList from "../../components/CardList";
 import "./Main.css";
 
 const Main = () => {
-    const [cards, setCards] = useState([]);
+    const [cards, setCards] = useState(() => {
+        // Inicializa o estado `cards` com dados do LocalStorage se disponíveis
+        const savedCards = localStorage.getItem('cards');
+        return savedCards ? JSON.parse(savedCards) : [];
+    });
 
     const [searchText, setSearchText] = useState('');
     const [isDarkMode, setIsDarkMode] = useState(false);
+
+    useEffect(() => {
+        // Salvar cards no LocalStorage sempre que eles forem atualizados
+        localStorage.setItem('cards', JSON.stringify(cards));
+    }, [cards]);
 
     const handleDelete = (id) => {
         const newArray = cards.filter(c => c.id !== id);
@@ -37,14 +46,13 @@ const Main = () => {
         <>
             <Header 
                 onSearch={setSearchText}
-                toggleDarkMode = {toggleDarkMode} 
+                toggleDarkMode={toggleDarkMode} 
                 isDarkMode={isDarkMode} 
             />
             <div
                 className="main"
                 style={{ backgroundColor: isDarkMode ? '#2F2F37' : '#EEEEFF'}}
             >    
-            
                 <InputBar
                     placeholder='Adicionar uma nota'
                     icon={"add"}
