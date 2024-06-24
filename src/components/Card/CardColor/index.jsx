@@ -2,16 +2,27 @@
 import "./CardColor.css";
 
 const CardColor = ({ handleColorChange }) => {
+
+
+    const getCSSVariable = (variable) => getComputedStyle(document.documentElement).getPropertyValue(variable).trim();
+
+    const defaultColor = getCSSVariable('--default');
+    const greenColor = getCSSVariable('--green');
+    const salmonColor = getCSSVariable('--salmon');
+    const redColor = getCSSVariable('--red');
+    const yellowColor = getCSSVariable('--yellow');
+    const purpleColor = getCSSVariable('--purple');
+
     return (
-        <div className='card__color' >
-            <div className='default' onClick={() => handleColorChange("#9FB4C7")}></div>
-            <div className='green' onClick={() => handleColorChange("#A0ECD0")}></div>
-            <div className='salmon' onClick={() => handleColorChange("#F4B9B2")}></div>
-            <div className='red' onClick={() => handleColorChange("#F49690")}></div>
-            <div className='yellow' onClick={() => handleColorChange("#FFF799")}></div>
-            <div className='purple' onClick={() => handleColorChange("#C490D1")}></div>
+        <div className='card__color'>
+          <div className='default' onClick={() => handleColorChange(defaultColor)}></div>
+          <div className='green' onClick={() => handleColorChange(greenColor)}></div>
+          <div className='salmon' onClick={() => handleColorChange(salmonColor)}></div>
+          <div className='red' onClick={() => handleColorChange(redColor)}></div>
+          <div className='yellow' onClick={() => handleColorChange(yellowColor)}></div>
+          <div className='purple' onClick={() => handleColorChange(purpleColor)}></div>
         </div>
-    )
-}
+      );
+    }
 
 export default CardColor;
