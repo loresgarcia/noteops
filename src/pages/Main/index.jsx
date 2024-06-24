@@ -6,6 +6,16 @@ import CardList from "../../components/CardList";
 import "./Main.css";
 
 const Main = () => {
+
+    const getCSSVariable = (variable) => getComputedStyle(document.documentElement).getPropertyValue(variable).trim();
+
+    const lightTextColor = getCSSVariable('--light-text-color');
+    const darkTextColor = getCSSVariable('--dark-text-color');
+    const lightBackgroundColor = getCSSVariable('--light-background-color');
+    const darkBackgroundColor = getCSSVariable('--dark-background-color');
+    const lightFundoColor = getCSSVariable('--light-fundo-color');
+    const darkFundoColor = getCSSVariable('--dark-fundo-color');
+    
     // Inicializar o estado `cards` com dados do LocalStorage se disponíveis
     const [cards, setCards] = useState(() => {
         const savedCards = localStorage.getItem('cards');
@@ -61,13 +71,13 @@ const Main = () => {
             />
             <div
                 className="main"
-                style={{ backgroundColor: isDarkMode ? '#2F2F37' : '#EEEEFF'}}
+                style={{ backgroundColor: isDarkMode ? darkFundoColor : lightFundoColor}}
             >    
                 <InputBar
                     placeholder='Adicionar uma nota'
                     icon={"add"}
-                    textColor={isDarkMode ? '#F2F2F2' : '#1C1C23' }
-                    backgroundColor={isDarkMode ? '#1C1C23' : '#9FB4C7'}
+                    textColor={isDarkMode ? darkTextColor : lightTextColor }
+                    backgroundColor={isDarkMode ? darkBackgroundColor : lightBackgroundColor}
                     onAddCard={handleAddCard}
                 />
                 <CardList

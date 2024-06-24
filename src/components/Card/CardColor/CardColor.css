@@ -1,3 +1,5 @@
+
+
 .card__color {
     align-items: center;
     background-color: #F2F2F2;
@@ -17,25 +19,25 @@
 }
 
 .card__color .default {
-    background-color: #9FB4C7;
+    background-color: var(--default);
 }
 
 .card__color .green {
-    background-color: #A0ECD0;
+    background-color: var(--green);
 }
 
 .card__color .salmon {
-    background-color: #F4B9B2;
+    background-color:var(--salmon);
 }
 
 .card__color .red {
-    background-color: #F49690;
+    background-color: var(--red);
 }
 
 .card__color .yellow {
-    background-color: #FFF799;
+    background-color: var(--yellow);
 }
 
 .card__color .purple {
-    background-color: #C490D1;
+    background-color: var(--purple);
 }

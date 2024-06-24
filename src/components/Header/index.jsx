@@ -9,6 +9,15 @@ import Switch from '../Switch';
 
 const Header =({ onSearch, isDarkMode, toggleDarkMode }) => {
 
+  const getCSSVariable = (variable) => getComputedStyle(document.documentElement).getPropertyValue(variable).trim();
+
+  const lightTextColor = getCSSVariable('--light-text-color');
+  const darkTextColor = getCSSVariable('--dark-text-color');
+  const lightBackgroundColor = getCSSVariable('--light-background-color');
+  const darkBackgroundColor = getCSSVariable('--dark-background-color');
+  const lightFundoColor = getCSSVariable('--light-fundo-color');
+  const darkFundoColor = getCSSVariable('--dark-fundo-color');
+
   const [width, setWidth] = useState(window.innerWidth < 600 ? '6rem' : '10rem');
 
   useEffect(() => {
@@ -26,7 +35,7 @@ const Header =({ onSearch, isDarkMode, toggleDarkMode }) => {
   return (
     <header
       className='header'
-      style={{ backgroundColor: isDarkMode ? '#1C1C21' : '#9FB4C7' }}
+      style={{ backgroundColor: isDarkMode ? darkBackgroundColor : lightBackgroundColor }}
     >
       <Logo
         src={isDarkMode ? logoDark : logoLight}
@@ -35,8 +44,8 @@ const Header =({ onSearch, isDarkMode, toggleDarkMode }) => {
       <InputBar
         placeholder='Pesquisar'
         icon={"search"}
-        backgroundColor={isDarkMode ? '#2F2F37' : '#EEEEFF'}
-        textColor={isDarkMode ? '#F2F2F2' : '#1C1C23' }
+        textColor={isDarkMode ? darkTextColor : lightTextColor}
+        backgroundColor={isDarkMode ? darkFundoColor : lightFundoColor}
         onSearch={onSearch}
       />
       <Switch
