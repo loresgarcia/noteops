@@ -3,7 +3,7 @@ import Login from './pages/Login';
 import Main from './pages/Main';
 import NotFound from './pages/NotFound';
 
-function App() {
+function route() {
     return (
         <Router>
         <Routes>
@@ -16,4 +16,4 @@ function App() {
     );
 }
 
-export default App;
+export default route;
