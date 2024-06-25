@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from 'react';
-import './Header.css';
 import logoLight from '../../assets/logo-light.png';
 import logoDark from '../../assets/logo-dark.png';
 import Logo from '../Logo';
 import InputBar from "../InputBar";
 import Switch from '../Switch';
+import './Header.css';
 
 const Header =({ onSearch, isDarkMode, toggleDarkMode }) => {
 
@@ -49,7 +49,8 @@ const Header =({ onSearch, isDarkMode, toggleDarkMode }) => {
         onSearch={onSearch}
       />
       <Switch
-      isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}
+        isDarkMode={isDarkMode} 
+        toggleDarkMode={toggleDarkMode}
       />
     </header>
   );

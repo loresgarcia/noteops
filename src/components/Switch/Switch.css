@@ -9,7 +9,7 @@
     align-items: center;
     border: none;
     border-radius: 2rem;
-    box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0.25rem 0.25rem 0 var(--dark-background-color-25);
     display: flex;
     height: 2.5rem;
     justify-content: center;

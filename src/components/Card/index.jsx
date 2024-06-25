@@ -62,8 +62,9 @@ const Card = ({ id, message, color, handleDelete, cards, setCards }) => {
                 <Delete className="icon" onClick={() => handleDelete(id)} />
             </div>
             {colorSelectVisible ?
-                <CardColor handleColorChange={handleColorChange} />
-                : <></>}
+                <CardColor handleColorChange={handleColorChange} /> : 
+                <></>
+            }
         </div>
     );
 };

@@ -15,23 +15,6 @@
     overflow: auto;
 }
 
-::-webkit-scrollbar {
-    width: 0.25rem;
-}
-
-::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #1E1E1E25;
-    border-radius: 0.125rem;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #1E1E1E;
-}
-
 .card textarea {
     background-color: transparent;
     border: none;
@@ -55,4 +38,21 @@
     color: #1E1E1E;
     cursor: pointer;
     font-size: 1rem;
+}
+
+::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1E1E1E25;
+    border-radius: 0.125rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1E1E1E;
 }

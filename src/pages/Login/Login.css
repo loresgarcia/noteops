@@ -1,6 +1,6 @@
 .login-page {
     align-items: center;
-    background-color:var(--light-background-color);
+    background-color: var(--light-background-color);
     display: flex;
     flex-direction: column;
     gap: 3rem; 

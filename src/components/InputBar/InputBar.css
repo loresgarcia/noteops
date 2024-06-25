@@ -8,8 +8,8 @@
     border: none;
     border-radius: 2rem;
     box-sizing: border-box;
-    box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
-    color: #F7EBE8;
+    box-shadow: 0 0.25rem 0.25rem 0 var(--dark-background-color-25);
+    color: var(--dark-text-color);
     font-size: 1rem;
     height: 100%;
     padding: 1rem;

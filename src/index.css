@@ -7,6 +7,7 @@
   
   --dark-text-color: #F2F2F2;
   --dark-background-color: #1C1C23;
+  --dark-background-color-25: #1C1C2325;
   --dark-fundo-color: #2F2F37;
 
 /* Cores do Card */
@@ -42,8 +43,6 @@ button:hover {
   transform: scale(1.1); 
 }
 
-button:focus,
-button:focus-visible {
+button:focus, button:focus-visible {
   outline: none;
 }
-

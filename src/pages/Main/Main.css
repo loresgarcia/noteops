@@ -1,7 +1,7 @@
 .main{
     align-items: center;
     box-sizing: border-box;
-    display:flex;
+    display: flex;
     flex-direction: column;
     min-height: calc(100vh - 80px);
     padding-top: 2rem;

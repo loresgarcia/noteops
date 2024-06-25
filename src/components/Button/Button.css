@@ -1,6 +1,6 @@
 .button{
-    background-color: #1C1C21;
-    box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.25);
-    color:#F7EBE8;
+    background-color: var(--dark-background-color);
+    box-shadow: 0 0.25rem 0.25rem 0 var(--dark-background-color-25);
+    color: var(--dark-text-color);
     width:12.5rem;
 }

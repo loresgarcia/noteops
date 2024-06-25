@@ -11,7 +11,7 @@ const Switch = ({ isDarkMode, toggleDarkMode }) => {
           onClick={toggleDarkMode}
           style={{
             backgroundColor: isDarkMode ? '#2F2F37' : '#EEEEFF',
-            color: isDarkMode ? '#FFF' : '#333'
+            color: isDarkMode ? '#F2F2F2' : '#1C1C23'
           }}
         >
           {isDarkMode ? (
