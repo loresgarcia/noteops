@@ -59,4 +59,4 @@ Para executar o projeto em seu ambiente local, siga estas etapas:
     npm run dev
     ```
 
-7. Abra o seu navegador e acesse a URL exibida no seu terminal para visualizar o projeto.
+7. Abra seu navegador e acesse a URL exibida no seu terminal para visualizar o projeto.
