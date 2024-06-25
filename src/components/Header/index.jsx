@@ -34,8 +34,8 @@ const Header =({ onSearch, isDarkMode, toggleDarkMode }) => {
 
     return (
         <header
-        className='header'
-        style={{ backgroundColor: isDarkMode ? darkBackgroundColor : lightBackgroundColor }}
+            className='header'
+            style={{ backgroundColor: isDarkMode ? darkBackgroundColor : lightBackgroundColor }}
         >
         <Logo
             src={isDarkMode ? logoDark : logoLight}
@@ -51,6 +51,8 @@ const Header =({ onSearch, isDarkMode, toggleDarkMode }) => {
         <Switch
             isDarkMode={isDarkMode} 
             toggleDarkMode={toggleDarkMode}
+            textColor={isDarkMode ? darkTextColor : lightTextColor}
+            backgroundColor={isDarkMode ? darkFundoColor : lightFundoColor}
         />
         </header>
     );

@@ -3,15 +3,15 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import './Switch.css';
 
-const Switch = ({ isDarkMode, toggleDarkMode }) => {
+const Switch = ({ isDarkMode, toggleDarkMode, textColor, backgroundColor }) => {
     return(
         <div className='switch-container'>
             <button
             className='switch'
             onClick={toggleDarkMode}
             style={{
-                backgroundColor: isDarkMode ? '#2F2F37' : '#EEEEFF',
-                color: isDarkMode ? '#F2F2F2' : '#1C1C23'
+                backgroundColor: backgroundColor,
+                color: textColor
             }}
             >
             {isDarkMode ? (
