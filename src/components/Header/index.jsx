@@ -9,51 +9,51 @@ import './Header.css';
 
 const Header =({ onSearch, isDarkMode, toggleDarkMode }) => {
 
-  const getCSSVariable = (variable) => getComputedStyle(document.documentElement).getPropertyValue(variable).trim();
+    const getCSSVariable = (variable) => getComputedStyle(document.documentElement).getPropertyValue(variable).trim();
 
-  const lightTextColor = getCSSVariable('--light-text-color');
-  const darkTextColor = getCSSVariable('--dark-text-color');
-  const lightBackgroundColor = getCSSVariable('--light-background-color');
-  const darkBackgroundColor = getCSSVariable('--dark-background-color');
-  const lightFundoColor = getCSSVariable('--light-fundo-color');
-  const darkFundoColor = getCSSVariable('--dark-fundo-color');
+    const lightTextColor = getCSSVariable('--light-text-color');
+    const darkTextColor = getCSSVariable('--dark-text-color');
+    const lightBackgroundColor = getCSSVariable('--light-background-color');
+    const darkBackgroundColor = getCSSVariable('--dark-background-color');
+    const lightFundoColor = getCSSVariable('--light-fundo-color');
+    const darkFundoColor = getCSSVariable('--dark-fundo-color');
 
-  const [width, setWidth] = useState(window.innerWidth < 600 ? '6rem' : '10rem');
+    const [width, setWidth] = useState(window.innerWidth < 600 ? '6rem' : '10rem');
 
-  useEffect(() => {
-    const handleResize = () => {
-      setWidth(window.innerWidth < 600 ? '6rem' : '10rem');
-    };
+    useEffect(() => {
+        const handleResize = () => {
+        setWidth(window.innerWidth < 600 ? '6rem' : '10rem');
+        };
 
-    window.addEventListener('resize', handleResize);
+        window.addEventListener('resize', handleResize);
 
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+        return () => {
+        window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
-  return (
-    <header
-      className='header'
-      style={{ backgroundColor: isDarkMode ? darkBackgroundColor : lightBackgroundColor }}
-    >
-      <Logo
-        src={isDarkMode ? logoDark : logoLight}
-        width={width}
-      />
-      <InputBar
-        placeholder='Pesquisar'
-        icon={"search"}
-        textColor={isDarkMode ? darkTextColor : lightTextColor}
-        backgroundColor={isDarkMode ? darkFundoColor : lightFundoColor}
-        onSearch={onSearch}
-      />
-      <Switch
-        isDarkMode={isDarkMode} 
-        toggleDarkMode={toggleDarkMode}
-      />
-    </header>
-  );
+    return (
+        <header
+        className='header'
+        style={{ backgroundColor: isDarkMode ? darkBackgroundColor : lightBackgroundColor }}
+        >
+        <Logo
+            src={isDarkMode ? logoDark : logoLight}
+            width={width}
+        />
+        <InputBar
+            placeholder='Pesquisar'
+            icon={"search"}
+            textColor={isDarkMode ? darkTextColor : lightTextColor}
+            backgroundColor={isDarkMode ? darkFundoColor : lightFundoColor}
+            onSearch={onSearch}
+        />
+        <Switch
+            isDarkMode={isDarkMode} 
+            toggleDarkMode={toggleDarkMode}
+        />
+        </header>
+    );
 }
 
 export default Header;

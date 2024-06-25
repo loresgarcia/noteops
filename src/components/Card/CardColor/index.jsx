@@ -15,14 +15,14 @@ const CardColor = ({ handleColorChange }) => {
 
     return (
         <div className='card__color'>
-          <div className='default' onClick={() => handleColorChange(defaultColor)}></div>
-          <div className='green' onClick={() => handleColorChange(greenColor)}></div>
-          <div className='salmon' onClick={() => handleColorChange(salmonColor)}></div>
-          <div className='red' onClick={() => handleColorChange(redColor)}></div>
-          <div className='yellow' onClick={() => handleColorChange(yellowColor)}></div>
-          <div className='purple' onClick={() => handleColorChange(purpleColor)}></div>
+            <div className='default' onClick={() => handleColorChange(defaultColor)}></div>
+            <div className='green' onClick={() => handleColorChange(greenColor)}></div>
+            <div className='salmon' onClick={() => handleColorChange(salmonColor)}></div>
+            <div className='red' onClick={() => handleColorChange(redColor)}></div>
+            <div className='yellow' onClick={() => handleColorChange(yellowColor)}></div>
+            <div className='purple' onClick={() => handleColorChange(purpleColor)}></div>
         </div>
-      );
-    }
+    );
+}
 
 export default CardColor;
